@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VINAY P BHAVI — Portfolio</title>
+
+  <style>
+    :root{
+      --bg: #062a2a;        /* solid dark teal */
+      --text: #ffffff;      /* white text everywhere */
+      --muted: #e2e8f0;     /* soft white for secondary text */
+      --link: #5ec0ff;      /* blue links */
+      --button-bg: #ffffff; /* white buttons */
+      --button-text: #062a2a; /* dark text for contrast */
+      --card: rgba(255,255,255,0.05);
+      --radius: 14px;
+      --max: 1200px;
+
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px;
+      font-size: 15px;
+      line-height: 1.6;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max);
+    }
+
+    /* HEADER */
+    header.top{
+      margin-bottom: 28px;
+      animation: fadeIn .7s ease forwards;
+      opacity:0;
+    }
+
+    .top-row{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    h1{
+      font-size: 28px;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+
+    .tag{
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .header-contact{
+      text-align:right;
+      color: var(--muted);
+      font-size:14px;
+    }
+
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* GRID LAYOUT */
+    .grid{
+      display:block;
+      gap:30px;
+    }
+
+    @media(min-width:980px){
+      .grid{
+        display:grid;
+        grid-template-columns:1fr 340px;
+      }
+      aside.side{
+        position:sticky;
+        top:20px;
+      }
+    }
+
+    /* CARDS */
+    .card{
+      background: var(--card);
+      padding:18px;
+      border-radius:var(--radius);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      margin-bottom:22px;
+      opacity:0;
+      transform: translateY(12px);
+      animation: fadeUp .7s ease forwards;
+    }
+
+    /* PROJECTS */
+    .project{
+      background: rgba(255,255,255,0.04);
+      padding:16px;
+      border-radius:12px;
+      margin-bottom:14px;
+      transition: transform .22s ease, box-shadow .22s ease;
+      opacity:0;
+      animation: fadeUp .7s ease forwards;
+    }
+    .project:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    h2{ font-size:18px; margin-bottom:12px; }
+    h3{ font-size:16px; margin-bottom:8px; }
+
+    /* BUTTONS */
+    .btn{
+      display:inline-block;
+      background: var(--button-bg);
+      color: var(--button-text);
+      padding:10px 14px;
+      border-radius: 10px;
+      font-weight:700;
+      text-decoration:none;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .btn:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+    }
+
+    /* SKILL CHIPS */
+    .chip{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,0.1);
+      color: var(--text);
+      margin-right:6px;
+      margin-bottom:6px;
+      font-size:13px;
+      transition: transform .2s ease;
+    }
+    .chip:hover{ transform: scale(1.05); }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity:0; }
+      to { opacity:1; }
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="top">
+      <div class="top-row">
+        <div>
+          <h1>VINAY P BHAVI</h1>
+          <div class="tag">RF & Antenna Engineering · HFSS · MATLAB · 5G / Phased Arrays</div>
+        </div>
+        <div class="header-contact">
+          <div>7204258592</div>
+          <a href="mailto:vinaypbhavi.22ec@saividya.ac.in">vinaypbhavi.22ec@saividya.ac.in</a><br>
+          <a href="https://www.linkedin.com/in/vinay-p-bhavi" target="_blank">linkedin.com/in/vinay-p-bhavi</a><br>
+          <a href="https://github.com/vin070104" target="_blank">github.com/vin070104</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+
+      <!-- MAIN CONTENT -->
+      <main>
+
+        <!-- CAREER OBJECTIVE -->
+        <section class="card">
+          <h2>Career Objective</h2>
+          <p>Electronics Engineer with a strong knowledge in RF, Microwave, antenna fundamentals and full-stack simulations.
+             Proficiency in HFSS, MATLAB and communication systems. Designing and validating antennas for different applications
+             with fabrication and testing. Aspiring engineer with a strong drive for IEEE engagement, technical competitions and
+             research presentations.</p>
+        </section>
+
+        <!-- PROJECTS -->
+        <section>
+          <h2>Projects</h2>
+
+          <div class="project">
+            <h3>RaNaT: Towards Cleaner and Brighter India</h3>
+            <p>Engineered an IoT-based solar tracking system with real-time monitoring and improved sustainability.</p>
+            <p>Achieved a 15% increase in energy storage efficiency.</p>
+          </div>
+
+          <div class="project">
+            <h3>High-Performance Sub-6 GHz Patch Antenna with Crescent DGS</h3>
+            <p>HFSS-designed microstrip patch antenna for 5G at 3.5GHz with improved gain and return loss.</p>
+            <p>Gain improved from 7–32 dB; S11 improved from –7 dB to –32 dB.</p>
+          </div>
+
+          <div class="project">
+            <h3>Phased Array Antenna with Beam Steering (Sub-6 GHz)</h3>
+            <p>Designed 4×4 phased array on FR4 with beam steering for 3.5GHz 5G applications.</p>
+            <p>Achieved –22.5 dB S11 and 6.87 dB gain.</p>
+          </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="card">
+          <h2>Education</h2>
+          <p><strong>2026</strong> – BE, Sai Vidya Institute of Technology (CGPA: 8.9 until 6th sem)</p>
+          <p><strong>2022</strong> – PUC, Jnana Jyothi PU College (92.83%)</p>
+          <p><strong>2020</strong> – SSLC, Jnana Jyothi High School (94.4%)</p>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="card">
+          <h2>Skills & Abilities</h2>
+          <p><strong>Software:</strong> HFSS | MATLAB | MS Office | Python | LabVIEW | Embedded systems | Antenna | 5G</p>
+          <p><strong>Hardware:</strong> Microwave | RF | Python | C | Validation | Fabrication | Antenna Design | Communication</p>
+          <p><strong>Core Competency:</strong> Leadership | Project Management</p>
+
+          <div style="margin-top:10px">
+            <span class="chip">HFSS</span>
+            <span class="chip">MATLAB</span>
+            <span class="chip">Embedded</span>
+            <span class="chip">Antennas</span>
+            <span class="chip">5G</span>
+            <span class="chip">RF</span>
+          </div>
+        </section>
+
+        <!-- WORKSHOPS -->
+        <section class="card">
+          <h2>Workshops & Internships</h2>
+          <p>SEMICON CONCLAVE 2025 · Antenna Design Workshop · MATLAB Antenna Toolbox Workshop ·
+             Virtual Internship WAMS (June–July 2025)</p>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section class="card">
+          <h2>Key Achievements & Roles</h2>
+          <ul>
+            <li>Winner: INVENTRONICS Hackathon (ECE Dept., SVIT)</li>
+            <li>2nd Place: TECHNOVA 2024 Mini Project Competition</li>
+            <li>3rd Place: CHANAKYOTSAVA 2025</li>
+            <li>Paper Presentation: TECH VIDYA 2025</li>
+            <li>Presenter: MAPCON 2024, SRISHTI, IMTEX 2025</li>
+            <li>Secretary: IEEE SVIT SBC; Chair of CEDA, CASS, SPS, EMBS SBCs</li>
+            <li>Volunteer: VLSI Workshop, IMWLC 2025, IEEE FNWF 2025</li>
+            <li>Speaker: “Spark Your Ideas” Outreach Program</li>
+          </ul>
+
+          <p><strong>Publication:</strong> Patch Antenna with Crescent DGS — accepted for ICMNWC 2025 & IEEE Xplore.</p>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section class="card">
+          <h2>Certifications</h2>
+          <ul>
+            <li>MATLAB Onramp</li>
+            <li>Microstrip Patch Antenna Array in HFSS</li>
+            <li>MATLAB Wireless Communications Onramp</li>
+            <li>Python Development & Fundamentals</li>
+          </ul>
+        </section>
+
+      </main>
+
+      <!-- ASIDE -->
+      <aside class="side">
+        <div class="card">
+          <h2>Contact</h2>
+          <p>Phone: <strong>7204258592</strong></p>
+          <p>Email: <a href="mailto:vinaypbhavi.22ec@saividya.ac.in">vinaypbhavi.22ec@saividya.ac.in</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/vinay-p-bhavi" target="_blank">vinay-p-bhavi</a></p>
+          <p>GitHub: <a href="https://github.com/vin070104" target="_blank">vin070104</a></p>
+
+          <a class="btn" href="Your_Resume.pdf" download style="margin-top:12px;">Download Resume (PDF)</a>
+        </div>
+      </aside>
+
+    </div>
+
+    <footer style="text-align:center; color:var(--muted); margin-top:20px;">
+      © <span id="year"></span> VINAY P BHAVI
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
