@@ -157,6 +157,148 @@
     }
     .chip:hover{ transform: scale(1.05); }
 
+    /* PHOTO GALLERY */
+    .gallery-container {
+      margin-bottom: 22px;
+      opacity: 0;
+      animation: fadeUp .7s ease forwards;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    @media(min-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform .3s ease, box-shadow .3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      aspect-ratio: 1;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(94, 192, 255, 0.4);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay-icon {
+      font-size: 32px;
+      color: white;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn .3s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      animation: zoomIn .3s ease;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 85vh;
+      border-radius: 8px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform .2s ease;
+    }
+
+    .lightbox-close:hover {
+      transform: scale(1.2);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      transition: background .2s ease;
+      user-select: none;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
     /* ANIMATIONS */
     @keyframes fadeIn {
       from { opacity:0; }
@@ -165,6 +307,11 @@
     @keyframes fadeUp {
       from { opacity:0; transform:translateY(20px); }
       to { opacity:1; transform:translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); }
+      to { transform: scale(1); }
     }
 
   </style>
@@ -223,6 +370,51 @@
             <h3>Design and Simulation of a Phased Array Antenna With Beam Steering for Sub-6GHz Applications</h3>
             <p>Designed 4×4 phased array on FR4 with beam steering for 3.5GHz for 5G applications.</p>
             <p>Achieved –22.5 dB S11 and 6.87 dB gain.</p>
+          </div>
+        </section>
+
+        <!-- PHOTO GALLERY -->
+        <section class="card gallery-container">
+          <h2>Photo Gallery</h2>
+          <p style="margin-bottom: 12px; color: var(--muted); font-size: 14px;">Click on any image to view in full screen</p>
+          <div class="gallery-grid" id="galleryGrid">
+            <!-- Gallery items will be dynamically added here or manually -->
+            <div class="gallery-item" onclick="openLightbox(0)">
+              <img src="photo1.jpg" alt="Gallery Photo 1">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-icon">🔍</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1)">
+              <img src="photo2.jpg" alt="Gallery Photo 2">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-icon">🔍</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(2)">
+              <img src="photo3.jpg" alt="Gallery Photo 3">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-icon">🔍</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(3)">
+              <img src="photo4.jpg" alt="Gallery Photo 4">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-icon">🔍</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4)">
+              <img src="photo5.jpg" alt="Gallery Photo 5">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-icon">🔍</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5)">
+              <img src="photo6.jpg" alt="Gallery Photo 6">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-icon">🔍</div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -329,7 +521,58 @@
 
   </div>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+      <span class="lightbox-nav lightbox-prev" onclick="prevImage()">&#10094;</span>
+      <img class="lightbox-image" id="lightboxImage" src="" alt="Gallery Image">
+      <span class="lightbox-nav lightbox-next" onclick="nextImage()">&#10095;</span>
+    </div>
+  </div>
+
   <script>
+    let currentIndex = 0;
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const totalImages = galleryItems.length;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const img = galleryItems[index].querySelector('img');
+      document.getElementById('lightboxImage').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % totalImages;
+      const img = galleryItems[currentIndex].querySelector('img');
+      document.getElementById('lightboxImage').src = img.src;
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+      const img = galleryItems[currentIndex].querySelector('img');
+      document.getElementById('lightboxImage').src = img.src;
+    }
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
+
+    // Close lightbox on background click
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox') closeLightbox();
+    });
+
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
