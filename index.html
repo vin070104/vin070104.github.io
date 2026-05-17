@@ -1,600 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VINAY P BHAVI</title>
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    :root{
-      --bg:#060b16;
-      --card:#101826;
-      --card2:#172235;
-      --text:#ffffff;
-      --muted:#9ca3af;
-      --accent:#5ec0ff;
-      --border:rgba(255,255,255,0.08);
-    }
-
-    body{
-      font-family:Inter,system-ui,sans-serif;
-      background:
-      linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.72)),
-      url("giphy.gif");
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-      color:var(--text);
-      overflow-x:hidden;
-    }
-
-    a{
-      text-decoration:none;
-      color:var(--accent);
-    }
-
-    /* ===== HERO ===== */
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px;
-    }
-
-    .hero-container{
-      width:100%;
-      max-width:1500px;
-
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap:40px;
-      align-items:center;
-    }
-
-    .hero-left{
-      animation:fadeUp 1s ease;
-    }
-
-    .hero-left h1{
-      font-size:72px;
-      line-height:1;
-      margin-bottom:20px;
-      font-weight:900;
-    }
-
-    .hero-left h2{
-      font-size:24px;
-      color:var(--accent);
-      margin-bottom:25px;
-      font-weight:600;
-    }
-
-    .hero-left p{
-      font-size:18px;
-      line-height:1.8;
-      color:#d1d5db;
-      max-width:800px;
-      margin-bottom:35px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:14px 22px;
-      border-radius:14px;
-      font-weight:700;
-      transition:.3s;
-      border:1px solid transparent;
-    }
-
-    .btn-primary{
-      background:white;
-      color:black;
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-4px);
-    }
-
-    .btn-secondary{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,0.06);
-      color:white;
-    }
-
-    .btn-secondary:hover{
-      background:rgba(255,255,255,0.1);
-    }
-
-    .hero-right{
-      display:flex;
-      justify-content:center;
-      animation:fadeIn 1.2s ease;
-    }
-
-    .profile-card{
-      width:380px;
-      background:rgba(16,24,38,0.85);
-      backdrop-filter:blur(12px);
-      border:1px solid var(--border);
-      border-radius:30px;
-      padding:30px;
-      text-align:center;
-      box-shadow:0 20px 50px rgba(0,0,0,0.4);
-    }
-
-    .profile-card img{
-      width:170px;
-      height:170px;
-      object-fit:cover;
-      border-radius:50%;
-      border:4px solid var(--accent);
-      margin-bottom:20px;
-    }
-
-    .profile-card h3{
-      font-size:28px;
-      margin-bottom:8px;
-    }
-
-    .profile-card p{
-      color:var(--muted);
-      margin-bottom:10px;
-    }
-
-    /* ===== HORIZONTAL SECTION ===== */
-
-    .section-title{
-      font-size:42px;
-      margin-bottom:30px;
-      padding-left:40px;
-      font-weight:800;
-    }
-
-    .horizontal-scroll{
-      display:flex;
-      gap:24px;
-      overflow-x:auto;
-      padding:0 40px 40px;
-      scroll-snap-type:x mandatory;
-    }
-
-    .horizontal-scroll::-webkit-scrollbar{
-      height:10px;
-    }
-
-    .horizontal-scroll::-webkit-scrollbar-thumb{
-      background:rgba(255,255,255,0.2);
-      border-radius:20px;
-    }
-
-    .card{
-      min-width:420px;
-      max-width:420px;
-      background:rgba(16,24,38,0.86);
-      border:1px solid var(--border);
-      border-radius:28px;
-      padding:28px;
-      backdrop-filter:blur(10px);
-
-      scroll-snap-align:start;
-      transition:.35s;
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-      border-color:rgba(94,192,255,0.4);
-      box-shadow:0 20px 40px rgba(0,0,0,0.35);
-    }
-
-    .card h3{
-      font-size:24px;
-      margin-bottom:18px;
-      color:white;
-    }
-
-    .card p{
-      color:#d1d5db;
-      line-height:1.7;
-      margin-bottom:12px;
-    }
-
-    /* ===== GALLERY ===== */
-
-    .gallery-card{
-      min-width:620px;
-      max-width:620px;
-    }
-
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-    }
-
-    .gallery-grid img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-      border-radius:18px;
-      transition:.3s;
-      cursor:pointer;
-    }
-
-    .gallery-grid img:hover{
-      transform:scale(1.04);
-    }
-
-    /* ===== SKILLS ===== */
-
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:20px;
-    }
-
-    .chip{
-      padding:10px 16px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.08);
-      color:white;
-      font-size:14px;
-    }
-
-    /* ===== FOOTER ===== */
-
-    footer{
-      text-align:center;
-      padding:50px 20px;
-      color:var(--muted);
-    }
-
-    /* ===== ANIMATION ===== */
-
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    @keyframes fadeIn{
-      from{
-        opacity:0;
-      }
-      to{
-        opacity:1;
-      }
-    }
-
-    /* ===== MOBILE ===== */
-
-    @media(max-width:1000px){
-
-      .hero-container{
-        grid-template-columns:1fr;
-      }
-
-      .hero-left h1{
-        font-size:48px;
-      }
-
-      .hero{
-        padding-top:70px;
-      }
-
-      .card{
-        min-width:90%;
-      }
-
-      .gallery-card{
-        min-width:90%;
-      }
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="hero-container">
-
-      <div class="hero-left">
-
-        <h1>VINAY<br>P BHAVI</h1>
-
-        <h2>
-          RF & Antenna Engineering • HFSS • MATLAB • 5G • Phased Arrays
-        </h2>
-
-        <p>
-          Electronics Engineer specializing in RF, microwave systems,
-          phased array antennas, HFSS simulation, antenna fabrication,
-          beam steering, and 5G communication systems.
-          Strong IEEE involvement with multiple publications,
-          presentations, workshops, and technical leadership roles.
-        </p>
-
-        <div class="hero-buttons">
+Education & Skills
+Education
+2026 — BE, Sai Vidya Institute of Technology
 
-          <a href="VINAY_P_BHAVI_2026.pdf" class="btn btn-primary">
-            Download Resume
-          </a>
+CGPA: 8.98 (Until 7th Semester)
 
-          <a href="COVER_LETTER_2026.pdf" class="btn btn-secondary">
-            Cover Letter
-          </a>
 
-        </div>
+2022 — PUC, Jnana Jyothi PU College
 
-      </div>
+92.83%
 
-      <div class="hero-right">
 
-        <div class="profile-card">
+2020 — SSLC, Jnana Jyothi High School
 
-          <img src="WhatsApp Image 2026-05-17 at 13.12.08.jpeg">
+94.4%
 
-          <h3>VINAY P BHAVI</h3>
 
-          <p>RF & Antenna Engineer</p>
 
-          <p>
-            📞 7204258592
-          </p>
+Semester Marksheets
+Technical Skills
+HFSS MATLAB Python LabVIEW RF Microwave 5G Phased Arrays Beam Steering Embedded Systems Fabrication Validation Communication
+Core Competencies
+Leadership
 
-          <p>
-            ✉ vinaypbhavi.22ec@saividya.ac.in
-          </p>
+Project Management
 
-          <p>
-            🔗 linkedin.com/in/vinay-p-bhavi
-          </p>
+Research Presentation
 
-          <p>
-            💻 github.com/vin070104
-          </p>
+Technical Documentation
 
-        </div>
+IEEE Coordination
 
-      </div>
+Workshop Organization
 
-    </div>
+Workshops & Internships
+Workshops
+SEMICON CONCLAVE 2025
 
-  </section>
 
-  <!-- PROJECTS -->
+Antenna Design Workshop
 
-  <h2 class="section-title">Projects</h2>
 
-  <section class="horizontal-scroll">
+MATLAB Antenna Toolbox Workshop
 
-    <div class="card">
 
-      <h3>RaNaT: Towards Cleaner and Brighter India</h3>
+IEEE DL Workshop on Advanced Antenna Technologies
 
-      <p>
-        IoT-based solar tracking system with
-        real-time monitoring and energy optimization.
-      </p>
 
-      <p>
-        Improved energy storage efficiency by 15%.
-      </p>
 
-    </div>
+View Certificates
+Internships
+Electronics and Radar Development Establishment (LRDE), DRDO — Jan 2026
 
-    <div class="card">
 
-      <h3>High Performance Sub-6 GHz Patch Antenna</h3>
+Wireless Antenna and Microwave Symposium (WAMS 2025 Virtual Internship)
 
-      <p>
-        HFSS-designed microstrip patch antenna
-        optimized for 5G applications at 3.5 GHz.
-      </p>
+May 2025 – June 2025
 
-      <p>
-        Gain improved from 4 dB to 6 dB and
-        S11 improved to –32 dB.
-      </p>
+Achievements & Leadership
+Achievements
+🏆 Winner — INVENTRONICS Hackathon
 
-    </div>
+🥈 2nd Place — TECHNOVA 2024
 
-    <div class="card">
+🥉 3rd Place — CHANAKYOTSAVA 2025
 
-      <h3>4×4 Phased Array with Beam Steering</h3>
+📄 Paper Presentation — TECH VIDYA 2025
 
-      <p>
-        Designed phased array antenna for
-        Sub-6 GHz 5G beam steering applications.
-      </p>
+🎤 Presenter — MAPCON 2024
 
-      <p>
-        Achieved –22.5 dB S11 and 6.87 dB gain.
-      </p>
+🎙 Speaker — Spark Your Ideas
 
-    </div>
+📝 Best Poem Award — “Symphony of Electronics”
 
-  </section>
+Publications
+High Performance Sub-6 GHz Patch Antenna with Circular Crescent DGS for 5G Applications
 
-  <!-- ACHIEVEMENTS -->
 
-  <h2 class="section-title">Achievements & Publications</h2>
+Published in IEEE Xplore — ICMNWC 2025
 
-  <section class="horizontal-scroll">
 
-    <div class="card">
 
-      <h3>Achievements</h3>
+Design and Simulation of a Phased Array Antenna with Beam Steering for Sub-6GHz Applications
 
-      <p>🏆 Winner — INVENTRONICS Hackathon</p>
-      <p>🥈 2nd Place — TECHNOVA 2024</p>
-      <p>🥉 3rd Place — CHANAKYOTSAVA 2025</p>
-      <p>🎤 Presenter — MAPCON 2024</p>
-      <p>📢 Speaker — Spark Your Ideas</p>
 
-    </div>
+Accepted for Oral Presentation — WAMS 2026
 
-    <div class="card">
 
-      <h3>Publications</h3>
 
-      <p>
-        IEEE Xplore Publication:
-      </p>
+IEEE Publication
+IEEE & Leadership
+Secretary — IEEE Student Branch SVIT
 
-      <p>
-        High Performance Sub-6 GHz Patch Antenna
-        with Circular Crescent DGS for 5G Applications
-      </p>
 
-      <p>
-        WAMS 2026 Accepted Oral Presentation:
-      </p>
+Volunteer — IMWLC 2025
 
-      <p>
-        Phased Array Antenna with Beam Steering
-      </p>
+Volunteer — FNWF 2025
 
-    </div>
+Volunteer — INDICON 2025
 
-    <div class="card">
+Volunteer — IEEE Microwave DL
 
-      <h3>Leadership</h3>
+Co-Host — IEEE Day Lecture Series
 
-      <p>
-        Secretary — IEEE Student Branch SVIT
-      </p>
+Organizing Committee — Protech Summit IEEE CEDA
 
-      <p>
-        Volunteer — FNWF 2025, INDICON 2025,
-        IMWLC 2025
-      </p>
+Cultural Achievements
+Awarded Saahitya Rathna by Maanvita Cultural Trust
 
-      <p>
-        Co-Host — IEEE Day Lecture Series
-      </p>
 
-    </div>
+Recognized among Top 10 poets in State-Level Poetry Competition
 
-  </section>
-
-  <!-- GALLERY -->
-
-  <h2 class="section-title">Gallery</h2>
-
-  <section class="horizontal-scroll">
-
-    <div class="card gallery-card">
-
-      <div class="gallery-grid">
-
-        <img src="WhatsApp Image 2026-05-03 at 12.37.40.jpeg">
-        <img src="WhatsApp Image 2026-04-24 at 20.49.49.jpeg">
-        <img src="WhatsApp Image 2026-05-03 at 12.26.02.jpeg">
-        <img src="WhatsApp Image 2026-05-03 at 12.20.15.jpeg">
-        <img src="WhatsApp Image 2026-05-03 at 12.38.54.jpeg">
-        <img src="Screenshot 2025-09-27 235851.png">
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SKILLS -->
-
-  <h2 class="section-title">Skills & Technologies</h2>
-
-  <section class="horizontal-scroll">
-
-    <div class="card">
-
-      <h3>Software</h3>
-
-      <div class="skills">
-
-        <span class="chip">HFSS</span>
-        <span class="chip">MATLAB</span>
-        <span class="chip">Python</span>
-        <span class="chip">LabVIEW</span>
-        <span class="chip">Embedded Systems</span>
-        <span class="chip">Antenna Design</span>
-
-      </div>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Core Areas</h3>
-
-      <div class="skills">
-
-        <span class="chip">RF</span>
-        <span class="chip">Microwave</span>
-        <span class="chip">5G</span>
-        <span class="chip">Beam Steering</span>
-        <span class="chip">Phased Arrays</span>
-        <span class="chip">Communication Systems</span>
-
-      </div>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Education</h3>
-
-      <p>
-        BE — Sai Vidya Institute of Technology
-      </p>
-
-      <p>
-        CGPA: 8.98
-      </p>
-
-      <br>
-
-      <p>
-        PUC — 92.83%
-      </p>
-
-      <p>
-        SSLC — 94.4%
-      </p>
-
-    </div>
-
-  </section>
-
-  <footer>
-
-    © 2026 VINAY P BHAVI
-
-  </footer>
-
-</body>
-</html>
+LinkedIn GitHub Certificates
+© 2026 VINAY P BHAVI
