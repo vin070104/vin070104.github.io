@@ -1,611 +1,600 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VINAY P BHAVI</title>
-  <img src="WhatsApp Image 2026-05-17 at 13.12.08.jpeg" 
-       alt="Vinay P Bhavi"
-       style="width:90px; height:90px; border-radius:40%; object-fit:cover; border:1px solid #000;">
 
   <style>
-    :root{
-      --text: #ffffff;      /* white text everywhere */
-      --muted: #e2e8f0;     /* soft white for secondary text */
-      --link: #5ec0ff;      /* blue links */
-      --button-bg: #ffffff; /* white buttons */
-      --button-text: #062a2a; /* dark text for contrast */
-      --card: rgba(0.5,0.5,0.5,0.05);
-      --radius: 14px;
-      --max: 1200px;
-
-      font-family: Inter, system-ui, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    *{box-sizing:border-box; margin:0; padding:0;}
+    :root{
+      --bg:#060b16;
+      --card:#101826;
+      --card2:#172235;
+      --text:#ffffff;
+      --muted:#9ca3af;
+      --accent:#5ec0ff;
+      --border:rgba(255,255,255,0.08);
+    }
+
     body{
-      background: linear-gradient(rgba(0, 0, 15, 0.5), rgba(0, 0, 15, 0.5)), url('Gemini_Generated_Image_17adux17adux17ad.png');
-      background: linear-gradient(rgba(0, 0, 15, 0.5), rgba(0, 0, 15, 0.5)), url('giphy.gif');
-      background-size: cover;
-      background-position: center;
-      background-attachment: flex;
-      color: var(--text);
-      padding: 20px;
-      font-size: 18px;
-      line-height: 1.6;
+      font-family:Inter,system-ui,sans-serif;
+      background:
+      linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.72)),
+      url("giphy.gif");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:var(--accent);
+    }
+
+    /* ===== HERO ===== */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+    }
+
+    .hero-container{
+      width:100%;
+      max-width:1500px;
+
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .hero-left{
+      animation:fadeUp 1s ease;
+    }
+
+    .hero-left h1{
+      font-size:72px;
+      line-height:1;
+      margin-bottom:20px;
+      font-weight:900;
+    }
+
+    .hero-left h2{
+      font-size:24px;
+      color:var(--accent);
+      margin-bottom:25px;
+      font-weight:600;
+    }
+
+    .hero-left p{
+      font-size:18px;
+      line-height:1.8;
+      color:#d1d5db;
+      max-width:800px;
+      margin-bottom:35px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 22px;
+      border-radius:14px;
+      font-weight:700;
+      transition:.3s;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:white;
+      color:black;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-4px);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.06);
+      color:white;
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.1);
+    }
+
+    .hero-right{
       display:flex;
       justify-content:center;
-    }
-   
-    .container{
-      width:100%;
-      max-width:var(--max);
+      animation:fadeIn 1.2s ease;
     }
 
-    /* HEADER */
-    header.top{
-      margin-bottom: 28px;
-      animation: fadeIn .7s ease forwards;
-      opacity:0;
+    .profile-card{
+      width:380px;
+      background:rgba(16,24,38,0.85);
+      backdrop-filter:blur(12px);
+      border:1px solid var(--border);
+      border-radius:30px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 20px 50px rgba(0,0,0,0.4);
     }
 
-    .top-row{
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:20px;
+    .profile-card img{
+      width:170px;
+      height:170px;
+      object-fit:cover;
+      border-radius:50%;
+      border:4px solid var(--accent);
+      margin-bottom:20px;
     }
 
-    .left-section{
-      margin-left: 40px;
+    .profile-card h3{
+      font-size:28px;
+      margin-bottom:8px;
     }
 
-    h1{
-      font-size: 28px;
+    .profile-card p{
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+
+    /* ===== HORIZONTAL SECTION ===== */
+
+    .section-title{
+      font-size:42px;
+      margin-bottom:30px;
+      padding-left:40px;
       font-weight:800;
-      margin-bottom:6px;
     }
 
-    .tag{
-      color: var(--muted);
-      font-size: 14px;
+    .horizontal-scroll{
+      display:flex;
+      gap:24px;
+      overflow-x:auto;
+      padding:0 40px 40px;
+      scroll-snap-type:x mandatory;
     }
 
-    .header-contact{
-      text-align:right;
-      color: var(--muted);
+    .horizontal-scroll::-webkit-scrollbar{
+      height:10px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-thumb{
+      background:rgba(255,255,255,0.2);
+      border-radius:20px;
+    }
+
+    .card{
+      min-width:420px;
+      max-width:420px;
+      background:rgba(16,24,38,0.86);
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:28px;
+      backdrop-filter:blur(10px);
+
+      scroll-snap-align:start;
+      transition:.35s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(94,192,255,0.4);
+      box-shadow:0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .card h3{
+      font-size:24px;
+      margin-bottom:18px;
+      color:white;
+    }
+
+    .card p{
+      color:#d1d5db;
+      line-height:1.7;
+      margin-bottom:12px;
+    }
+
+    /* ===== GALLERY ===== */
+
+    .gallery-card{
+      min-width:620px;
+      max-width:620px;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .gallery-grid img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:18px;
+      transition:.3s;
+      cursor:pointer;
+    }
+
+    .gallery-grid img:hover{
+      transform:scale(1.04);
+    }
+
+    /* ===== SKILLS ===== */
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .chip{
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.08);
+      color:white;
       font-size:14px;
     }
 
-    a{ color: var(--link); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    /* ===== FOOTER ===== */
 
-    /* GRID LAYOUT */
-    .grid{
-      display:block;
-      gap:30px;
+    footer{
+      text-align:center;
+      padding:50px 20px;
+      color:var(--muted);
     }
 
-    @media(min-width:980px){
-      .grid{
-        display:grid;
-        grid-template-columns:1fr 340px;
+    /* ===== ANIMATION ===== */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(30px);
       }
-      aside.side{
-        position:sticky;
-        top:20px;
-      }
-    }
-
-    /* CARDS */
-    .card{
-      background: var(--card);
-      padding:18px;
-      border-radius:var(--radius);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-      backdrop-filter: blur(4px);
-      margin-bottom:22px;
-      opacity:0;
-      transform: translateY(12px);
-      animation: fadeUp .7s ease forwards;
-    }
-
-    /* PROJECTS */
-    .project{
-      background: rgba(255,255,255,0.04);
-      padding:16px;
-      border-radius:12px;
-      margin-bottom:14px;
-      transition: transform .22s ease, box-shadow .22s ease;
-      opacity:0;
-      animation: fadeUp .7s ease forwards;
-    }
-    .project:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    h2{ font-size:18px; margin-bottom:12px; }
-    h3{ font-size:16px; margin-bottom:8px; }
-
-    /* BUTTONS */
-    .btn{
-      display:inline-block;
-      background: var(--button-bg);
-      color: var(--button-text);
-      padding:10px 14px;
-      border-radius: 10px;
-      font-weight:700;
-      text-decoration:none;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .btn:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(255,255,255,0.2);
-    }
-
-    /* SKILL CHIPS */
-    .chip{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      background: rgba(255,255,255,0.1);
-      color: var(--text);
-      margin-right:6px;
-      margin-bottom:6px;
-      font-size:13px;
-      transition: transform .2s ease;
-    }
-    .chip:hover{ transform: scale(1.05); }
-
-    /* PHOTO GALLERY */
-    .gallery-container {
-      margin-bottom: 22px;
-      opacity: 0;
-      animation: fadeUp .7s ease forwards;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    @media(min-width: 768px) {
-      .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      to{
+        opacity:1;
+        transform:translateY(0);
       }
     }
 
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform .3s ease, box-shadow .3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      aspect-ratio: 1;
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+      }
+      to{
+        opacity:1;
+      }
     }
 
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .3s ease;
-    }
+    /* ===== MOBILE ===== */
 
-    .gallery-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(94, 192, 255, 0.4);
-    }
+    @media(max-width:1000px){
 
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
+      .hero-container{
+        grid-template-columns:1fr;
+      }
 
-    .gallery-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity .3s ease;
-    }
+      .hero-left h1{
+        font-size:48px;
+      }
 
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
+      .hero{
+        padding-top:70px;
+      }
 
-    .gallery-overlay-icon {
-      font-size: 32px;
-      color: white;
-    }
+      .card{
+        min-width:90%;
+      }
 
-    /* LIGHTBOX */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      animation: fadeIn .3s ease;
-    }
-
-    .lightbox.active {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-content {
-      position: relative;
-      max-width: 90%;
-      max-height: 90vh;
-      animation: zoomIn .3s ease;
-    }
-
-    .lightbox-image {
-      max-width: 100%;
-      max-height: 85vh;
-      border-radius: 8px;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: -40px;
-      right: 0;
-      color: white;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: transform .2s ease;
-    }
-
-    .lightbox-close:hover {
-      transform: scale(1.2);
-    }
-
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: white;
-      font-size: 32px;
-      cursor: pointer;
-      padding: 10px 20px;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 5px;
-      transition: background .2s ease;
-      user-select: none;
-    }
-
-    .lightbox-nav:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .lightbox-prev {
-      left: 10px;
-    }
-
-    .lightbox-next {
-      right: 10px;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeIn {
-      from { opacity:0; }
-      to { opacity:1; }
-    }
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(20px); }
-      to { opacity:1; transform:translateY(0); }
-    }
-
-    @keyframes zoomIn {
-      from { transform: scale(0.8); }
-      to { transform: scale(1); }
+      .gallery-card{
+        min-width:90%;
+      }
     }
 
   </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <!-- HEADER -->
-    <header class="top">
-      <div class="top-row">
-        <div class="left-section">
-          <h1>VINAY P BHAVI</h1>
-          <div class="tag">RF & Antenna Engineering · HFSS · MATLAB · 5G / Phased Arrays</div>
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-container">
+
+      <div class="hero-left">
+
+        <h1>VINAY<br>P BHAVI</h1>
+
+        <h2>
+          RF & Antenna Engineering • HFSS • MATLAB • 5G • Phased Arrays
+        </h2>
+
+        <p>
+          Electronics Engineer specializing in RF, microwave systems,
+          phased array antennas, HFSS simulation, antenna fabrication,
+          beam steering, and 5G communication systems.
+          Strong IEEE involvement with multiple publications,
+          presentations, workshops, and technical leadership roles.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="VINAY_P_BHAVI_2026.pdf" class="btn btn-primary">
+            Download Resume
+          </a>
+
+          <a href="COVER_LETTER_2026.pdf" class="btn btn-secondary">
+            Cover Letter
+          </a>
+
         </div>
-        <div class="header-contact">
-          <div>7204258592</div>
-          <a href="mailto:vinaypbhavi.22ec@saividya.ac.in">vinaypbhavi.22ec@saividya.ac.in</a><br>
-          <a href="https://www.linkedin.com/in/vinay-p-bhavi" target="_blank">linkedin.com/in/vinay-p-bhavi</a><br>
-          <a href="https://github.com/vin070104" target="_blank">github.com/vin070104</a>
-        </div>
+
       </div>
-    </header>
 
-    <div class="grid">
+      <div class="hero-right">
 
-      <!-- MAIN CONTENT -->
-      <main>
+        <div class="profile-card">
 
-        <!-- CAREER OBJECTIVE -->
-        <section class="card">
-          <h2>Career Objective</h2>
-          <p>Electronics Engineer with a strong knowledge in RF, Microwave, antenna fundamentals and full-stack simulations.
-             Proficiency in HFSS, MATLAB and communication systems. Designing and validating antennas for different applications
-             with fabrication and testing. Aspiring engineer with a strong drive for IEEE engagement, technical competitions and
-             research presentations.</p>
-        </section>
+          <img src="WhatsApp Image 2026-05-17 at 13.12.08.jpeg">
 
-        <!-- PROJECTS -->
-        <section>
-          <h2>Projects</h2>
+          <h3>VINAY P BHAVI</h3>
 
-          <div class="project">
-            <h3>RaNaT: Towards Cleaner and Brighter India</h3>
-            <p>Engineered an IoT-based solar tracking system with real-time monitoring and improved sustainability.</p>
-            <p>Achieved a 15% increase in energy storage efficiency.</p>
-          </div>
+          <p>RF & Antenna Engineer</p>
 
-          <div class="project">
-            <h3>High Performance Sub-6 GHz Patch Antenna with Circular Crescent DGS for 5G Applications</h3>
-            <p>HFSS-designed microstrip patch antenna for 5G at 3.5GHz with improved gain and return loss.</p>
-            <p>Gain improved from 4 to 6 dB; S11 improved from –7 dB to –32 dB.</p>
-          </div>
+          <p>
+            📞 7204258592
+          </p>
 
-          <div class="project">
-            <h3>Design and Simulation of a Phased Array Antenna With Beam Steering for Sub-6GHz Applications</h3>
-            <p>Designed 4×4 phased array on FR4 with beam steering for 3.5GHz for 5G applications.</p>
-            <p>Achieved –22.5 dB S11 and 6.87 dB gain.</p>
-          </div>
-        </section>
+          <p>
+            ✉ vinaypbhavi.22ec@saividya.ac.in
+          </p>
 
-        <!-- PHOTO GALLERY -->
-        <section class="card gallery-container">
-          <h2>Photo Gallery</h2>
-          <p style="margin-bottom: 12px; color: var(--muted); font-size: 14px;">Click on any image to view in full screen</p>
-          <div class="gallery-grid" id="galleryGrid">
-            <!-- Gallery items will be dynamically added here or manually -->
-            <div class="gallery-item" onclick="openLightbox(0)">
-              <img src="WhatsApp Image 2026-05-03 at 12.37.40.jpeg" alt="Gallery Photo 1">
-              <div class="gallery-overlay">
-                <div class="gallery-overlay-icon">🔍</div>
-              </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(1)">
-              <img src="WhatsApp Image 2026-04-24 at 20.49.49.jpeg" alt="Gallery Photo 2">
-              <div class="gallery-overlay">
-                <div class="gallery-overlay-icon">🔍</div>
-              </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(2)">
-              <img src="WhatsApp Image 2026-05-03 at 12.26.02.jpeg" alt="Gallery Photo 3">
-              <div class="gallery-overlay">
-                <div class="gallery-overlay-icon">🔍</div>
-              </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(3)">
-              <img src="WhatsApp Image 2026-05-03 at 12.20.15.jpeg" alt="Gallery Photo 4">
-              <div class="gallery-overlay">
-                <div class="gallery-overlay-icon">🔍</div>
-              </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(4)">
-              <img src="WhatsApp Image 2026-05-03 at 12.38.54.jpeg" alt="Gallery Photo 5">
-              <div class="gallery-overlay">
-                <div class="gallery-overlay-icon">🔍</div>
-              </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(5)">
-              <img src="Screenshot 2025-09-27 235851.png" alt="Gallery Photo 6">
-              <div class="gallery-overlay">
-                <div class="gallery-overlay-icon">🔍</div>
-              </div>
-            </div>
-             <div class="gallery-item" onclick="openLightbox(6)">
-              <img src="Screenshot 2025-06-28 093253.png" alt="Gallery Photo 7">
-              <div class="gallery-overlay">
-                <div class="gallery-overlay-icon">🔍</div>
-              </div>
-            </div>
-          </div>
-        </section>
+          <p>
+            🔗 linkedin.com/in/vinay-p-bhavi
+          </p>
 
-        <!-- EDUCATION -->
-        <section class="card">
-          <h2>Education</h2>
-          <p style="margin-bottom: 12px; color: var(--muted); font-size: 14px;">Click on Education details to download respective Marks Sheets</p>
-          
-          <a href="RESULTS_SEM1_TO_SEM7.pdf" download class="RESULTS_SEM1_TO_SEM7.pdf" style="color: white; text-decoration: none;">
-          <p><strong>2026</strong> – BE, Sai Vidya Institute of Technology (CGPA: 8.98 until 7 sem)</p></a>
-          
-          <a href="12 .pdf" download class="12 .pdf" style="color: white; text-decoration: none;">  
-          <p><strong>2022</strong> – PUC, Jnana Jyothi PU College (92.83%)</p></a>
-          
-          <a href="10 .pdf" download class="10. pdf" style="color: white; text-decoration: none;">
-          <p><strong>2020</strong> – SSLC, Jnana Jyothi High School (94.4%)</p></a>
-        </section>
+          <p>
+            💻 github.com/vin070104
+          </p>
 
-        <!-- SKILLS -->
-        <section class="card">
-          <h2>Skills & Abilities</h2>
-          <p><strong>Software:</strong> HFSS | MATLAB | MS Office | Python | LabVIEW | Embedded systems | Antenna | 5G</p>
-          <p><strong>Hardware:</strong> Microwave | RF | Python | C | Validation | Fabrication | Antenna Design | Communication</p>
-          <p><strong>Core Competency:</strong> Leadership | Project Management</p>
-
-          <div style="margin-top:10px">
-            <span class="chip">HFSS</span>
-            <span class="chip">MATLAB</span>
-            <span class="chip">Embedded</span>
-            <span class="chip">Antennas</span>
-            <span class="chip">5G</span>
-            <span class="chip">RF</span>
-          </div>
-        </section>
-
-        <!-- WORKSHOPS -->
-        <section class="card">
-          <h2>Workshops</h2>
-          <p style="margin-bottom: 12px; color: var(--muted); font-size: 14px;">Click on Workshops to see the certificates</p>
-          <ul>
-            <a href="Semicon Conclave 2025.pdf" download class="Semicpn Conclave 2025.pdf" style="color: white; text-decoration: none;">
-            <li>SEMICON CONCLAVE 2025</li></a>
-             <a href="MATHWORKS.pdf" download class="MATHWORKS.pdf" style="color: white; text-decoration: none;">
-            <li>Antenna Design Workshop</li></a>
-            <a href="MATHWORKS_10th_MAY.png" download class="MATHWORKS_10th_MAY.png" style="color: white; text-decoration: none;">
-            <li>MATLAB Antenna Toolbox Workshop</li></a>
-            <a href="Screenshot 2025-06-16 145121.png" download class="Screenshot 2025-06-16 145121.png" style="color: white; text-decoration: none;">
-            <li>IEEE DL Workshop on Advanced Antenna Technologies</li></a>
-          </ul>
-        </section>
-
-        <!-- INTERNSHIPS -->
-        <section class="card">
-          <h2>Internship</h2>
-          <ul>Electronics and Radar Development Establishment (LRDE), Defence Research and Development Organization (DRDO) - Jan 2026</ul>
-          <ul>Wireless Antenna and Microwave Symposium (WAMS) 2025 (Virtual) - May 2025 to June 2025</ul>
-        </section>
-
-        <!-- ACHIEVEMENTS -->
-        <section class="card">
-          <h2>Key Achievements & Roles</h2>
-          <ul>
-            <li>Winner: INVENTRONICS Hackathon (ECE Dept., SVIT)</li>
-            <li>2nd Place: TECHNOVA 2024 Mini Project Competition</li>
-            <li>3rd Place: CHANAKYOTSAVA 2025</li>
-            <li>Paper Presentation: TECH VIDYA 2025</li>
-            <li>Presenter: MAPCON 2024, SRISHTI, IMTEX 2025</li>
-            <li>Speaker: "Spark Your Ideas" Outreach Program</li>
-            <li><strong>Best Poem Award</strong> : For the poem <strong>"Symphony of Electronics"</strong> by IEEE CASS in SWEAT  </li>
-          </ul>
-
-          <section class ="card">
-            <h2>Publications</h2>
-            <ul>
-               <li> High Performance Sub-6 GHz Patch Antenna with Circular Crescent DGS for 5G Applications — ICMNWC 2025, IEEE Xplore.</li></p>
-          <li> Design and Simulation of a Phased Array Antenna With Beam Steering for Sub-6GHz Applications - accepted for oral presentation at WAMS 2026</li>
-            </ul>
-          </section>
-
-                <!-- VOLUNTEERING -->
-        <section class="card">
-          <h2>Volunteering & Leadership</h2>
-          <ul>
-            <li><strong>Secretary</strong> – IEEE Student Branch, Sai Vidya Institute of Technology</li>
-            <li>Volunteer – 3-Day Workshop on VLSI Design Aspects</li>
-            <li>Volunteer – IMWLC 2025</li>
-            <li>Volunteer – IEEE Day Student Branch Office Bearers Conclave</li>
-            <li>Volunteer – Future Networks World Forum (FNWF 2025)</li>
-            <li>Volunteer – INDICON 2025</li>
-            <li>Volunteer – IEEE Microwave Distinguished Lecture at SVIT</li>
-            <li>Co-Host – IEEE Day Series of Lectures</li>
-            <li>Volunteer – Mega Project Expo 2025, SAI VIDYA INSTITUTE OF TECHNOLOGY</li>
-            <li>Volunteer and Organizing Comittee - Protech Summit by IEEE CEDA SVIT SBC Feb, 2026</li>
-          </ul>
-        </section>
-        <section class="card">
-          <h2>Cultural Achievements</h2>
-          <ul>
-            Awarded <strong>Saahitya Rathna</strong> by <strong>Maanvita Cultural Trust</strong> as top 10 poets in state level poetry competition
-          </ul>
-          
-        </section>
-
-
-
-      </main>
-
-      <!-- ASIDE -->
-      <aside class="side">
-        <div class="card">
-          <h2>Contact</h2>
-          <p>Phone: <strong>7204258592</strong></p>
-          <p>Email: <a href="mailto:vinaypbhavi.22ec@saividya.ac.in">vinaypbhavi.22ec@saividya.ac.in</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/vinay-p-bhavi-244909337/" target="_blank">vinay-p-bhavi</a></p>
-          <p>GitHub: <a href="https://github.com/vin070104" target="_blank">vin070104</a></p>
-          <p>Certificates : <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing">Certificates </a></p>
-          <p>Paper Publication : <a href="https://bit.ly/HighPerformanceSub-6GHzPatchAntennawithCircularCrescentDGSfor5GApplications" target="_blank">ICMNWC 2025</a></p>
-          <a class="btn" href="VINAY_P_BHAVI_2026.pdf" download style="margin-top:12px;">Download Resume (PDF)</a>
-          <a class="btn" href="COVER_LETTER_2026.pdf" download style="margin-top:12px;">Download Cover Letter (PDF)</a>
         </div>
-      </aside>
+
+      </div>
 
     </div>
 
-    <footer style="text-align:center; color:var(--muted); margin-top:20px;">
-      © <span id="year"></span> VINAY P BHAVI
-    </footer>
+  </section>
 
-  </div>
+  <!-- PROJECTS -->
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-content">
-      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-      <span class="lightbox-nav lightbox-prev" onclick="prevImage()">&#10094;</span>
-      <img class="lightbox-image" id="lightboxImage" src="" alt="Gallery Image">
-      <span class="lightbox-nav lightbox-next" onclick="nextImage()">&#10095;</span>
+  <h2 class="section-title">Projects</h2>
+
+  <section class="horizontal-scroll">
+
+    <div class="card">
+
+      <h3>RaNaT: Towards Cleaner and Brighter India</h3>
+
+      <p>
+        IoT-based solar tracking system with
+        real-time monitoring and energy optimization.
+      </p>
+
+      <p>
+        Improved energy storage efficiency by 15%.
+      </p>
+
     </div>
-  </div>
 
-  <script>
-    let currentIndex = 0;
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const totalImages = galleryItems.length;
+    <div class="card">
 
-    function openLightbox(index) {
-      currentIndex = index;
-      const img = galleryItems[index].querySelector('img');
-      document.getElementById('lightboxImage').src = img.src;
-      document.getElementById('lightbox').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+      <h3>High Performance Sub-6 GHz Patch Antenna</h3>
 
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
+      <p>
+        HFSS-designed microstrip patch antenna
+        optimized for 5G applications at 3.5 GHz.
+      </p>
 
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % totalImages;
-      const img = galleryItems[currentIndex].querySelector('img');
-      document.getElementById('lightboxImage').src = img.src;
-    }
+      <p>
+        Gain improved from 4 dB to 6 dB and
+        S11 improved to –32 dB.
+      </p>
 
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-      const img = galleryItems[currentIndex].querySelector('img');
-      document.getElementById('lightboxImage').src = img.src;
-    }
+    </div>
 
-    // Close lightbox on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') nextImage();
-      if (e.key === 'ArrowLeft') prevImage();
-    });
+    <div class="card">
 
-    // Close lightbox on background click
-    document.getElementById('lightbox').addEventListener('click', (e) => {
-      if (e.target.id === 'lightbox') closeLightbox();
-    });
+      <h3>4×4 Phased Array with Beam Steering</h3>
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <p>
+        Designed phased array antenna for
+        Sub-6 GHz 5G beam steering applications.
+      </p>
+
+      <p>
+        Achieved –22.5 dB S11 and 6.87 dB gain.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+
+  <h2 class="section-title">Achievements & Publications</h2>
+
+  <section class="horizontal-scroll">
+
+    <div class="card">
+
+      <h3>Achievements</h3>
+
+      <p>🏆 Winner — INVENTRONICS Hackathon</p>
+      <p>🥈 2nd Place — TECHNOVA 2024</p>
+      <p>🥉 3rd Place — CHANAKYOTSAVA 2025</p>
+      <p>🎤 Presenter — MAPCON 2024</p>
+      <p>📢 Speaker — Spark Your Ideas</p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Publications</h3>
+
+      <p>
+        IEEE Xplore Publication:
+      </p>
+
+      <p>
+        High Performance Sub-6 GHz Patch Antenna
+        with Circular Crescent DGS for 5G Applications
+      </p>
+
+      <p>
+        WAMS 2026 Accepted Oral Presentation:
+      </p>
+
+      <p>
+        Phased Array Antenna with Beam Steering
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Leadership</h3>
+
+      <p>
+        Secretary — IEEE Student Branch SVIT
+      </p>
+
+      <p>
+        Volunteer — FNWF 2025, INDICON 2025,
+        IMWLC 2025
+      </p>
+
+      <p>
+        Co-Host — IEEE Day Lecture Series
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <h2 class="section-title">Gallery</h2>
+
+  <section class="horizontal-scroll">
+
+    <div class="card gallery-card">
+
+      <div class="gallery-grid">
+
+        <img src="WhatsApp Image 2026-05-03 at 12.37.40.jpeg">
+        <img src="WhatsApp Image 2026-04-24 at 20.49.49.jpeg">
+        <img src="WhatsApp Image 2026-05-03 at 12.26.02.jpeg">
+        <img src="WhatsApp Image 2026-05-03 at 12.20.15.jpeg">
+        <img src="WhatsApp Image 2026-05-03 at 12.38.54.jpeg">
+        <img src="Screenshot 2025-09-27 235851.png">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <h2 class="section-title">Skills & Technologies</h2>
+
+  <section class="horizontal-scroll">
+
+    <div class="card">
+
+      <h3>Software</h3>
+
+      <div class="skills">
+
+        <span class="chip">HFSS</span>
+        <span class="chip">MATLAB</span>
+        <span class="chip">Python</span>
+        <span class="chip">LabVIEW</span>
+        <span class="chip">Embedded Systems</span>
+        <span class="chip">Antenna Design</span>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Core Areas</h3>
+
+      <div class="skills">
+
+        <span class="chip">RF</span>
+        <span class="chip">Microwave</span>
+        <span class="chip">5G</span>
+        <span class="chip">Beam Steering</span>
+        <span class="chip">Phased Arrays</span>
+        <span class="chip">Communication Systems</span>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Education</h3>
+
+      <p>
+        BE — Sai Vidya Institute of Technology
+      </p>
+
+      <p>
+        CGPA: 8.98
+      </p>
+
+      <br>
+
+      <p>
+        PUC — 92.83%
+      </p>
+
+      <p>
+        SSLC — 94.4%
+      </p>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    © 2026 VINAY P BHAVI
+
+  </footer>
 
 </body>
 </html>
