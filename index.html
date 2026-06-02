@@ -471,6 +471,44 @@
       border:1px solid var(--cyan-border);
     }
 
+    /* ── CERTIFICATIONS ── */
+    #certifications { background:var(--bg2); }
+    .cert-list {
+      max-width:880px; margin:0 auto;
+      display:flex; flex-direction:column; gap:1rem;
+    }
+    .cert-item {
+      background:var(--card); border:1px solid var(--cyan-border);
+      padding:1.5rem 2rem; transition:all .3s;
+      opacity:0; transform:translateX(-18px);
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .cert-item.visible { opacity:1; transform:translateX(0); }
+    .cert-item:hover { border-color:var(--cyan); box-shadow:var(--glow); background:rgba(0,212,255,.08); }
+    .cert-name {
+      font-family:'Rajdhani',sans-serif; font-size:1rem;
+      font-weight:600; color:#fff;
+      display:flex; align-items:center; gap:.8rem;
+      flex:1;
+    }
+    .cert-icon {
+      font-size:1.3rem; color:var(--cyan);
+    }
+    .cert-badge {
+      font-family:'Share Tech Mono',monospace; font-size:.55rem;
+      color:#00ff80; border:1px solid rgba(0,255,128,.3);
+      padding:.2rem .5rem; background:rgba(0,255,128,.05);
+      letter-spacing:1px;
+    }
+    .cert-link {
+      display:inline-flex; align-items:center; gap:.5rem;
+      font-family:'Share Tech Mono',monospace; font-size:.68rem;
+      color:var(--cyan); text-decoration:none; letter-spacing:1px;
+      border:1px solid var(--cyan-border); padding:.4rem .9rem;
+      transition:all .3s;
+    }
+    .cert-link:hover { background:var(--cyan-dim); box-shadow:var(--glow); }
+
     /* ── CONTACT ── */
     #contact { border-top:1px solid var(--cyan-border); }
     .contact-grid {
@@ -541,6 +579,8 @@
       .skills-grid { grid-template-columns:1fr; }
       .contact-grid { grid-template-columns:1fr; gap:2rem; }
       .h-metrics { gap:1.5rem; }
+      .cert-item { flex-direction:column; gap:1rem; align-items:flex-start; }
+      .cert-link { width:100%; justify-content:space-between; }
       footer { flex-direction:column; gap:.5rem; text-align:center; }
     }
     @media (max-width:480px) {
@@ -567,6 +607,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#publications">Research</a></li>
       <li><a href="#achievements">Awards</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="hamburger" id="hamburger">
@@ -582,6 +623,7 @@
     <a href="#projects"     onclick="closeMobile()">Projects</a>
     <a href="#publications" onclick="closeMobile()">Research</a>
     <a href="#achievements" onclick="closeMobile()">Awards</a>
+    <a href="#certifications" onclick="closeMobile()">Certifications</a>
     <a href="#contact"      onclick="closeMobile()">Contact</a>
   </div>
 
@@ -591,7 +633,7 @@
   <section id="hero">
     <p class="h-tag">// RF · Antenna · 5G · DRDO · IEEE</p>
     <h1 class="h-name">VINAY<span>P BHAVI</span></h1>
-    <p class="h-desc">RF &amp; Antenna Design Engineer specialising in 5G systems, phased arrays, and sub-6 GHz simulations. Currently interning at <strong style="color:var(--text)">DRDO LRDE</strong>, Bengaluru.</p>
+    <p class="h-desc">RF &amp; Antenna Design Engineer specialising in 5G systems, phased arrays, and sub-6 GHz simulations. Currently interning at <strong style="color:var(--text)">DRDO LRDE</strong>.</p>
     <div class="h-metrics">
       <div>
         <div class="metric-v">8.98</div>
@@ -643,9 +685,9 @@
       <div data-reveal>
         <p class="s-label">// 01 — ABOUT</p>
         <h2 class="s-title">Designing the<br>Future of <span>Wireless</span></h2>
-        <p>I am a final-year Electronics and Communication Engineering student at Sai Vidya Institute of Technology, Bengaluru — with a deep focus on <strong>antenna design, RF systems, and microwave engineering</strong>.</p>
-        <p>My simulation work spans HFSS-designed patch antennas achieving S11 of <strong>–32 dB</strong>, through to 4×4 phased arrays with active beam-steering at 3.5 GHz — all targeting real-world 5G deployment.</p>
-        <p>At <strong>DRDO LRDE</strong>, I work on defence-grade RF and radar systems. I also serve as IEEE Secretary and Chair of four society student branches at SVIT, driving technical growth across the department.</p>
+        <p>I am a final-year Electronics and Communication Engineering student at Sai Vidya Institute of Technology, Bengaluru — with a deep focus on <strong>antenna design, RF systems, and microwave engineering</strong> for next-generation wireless networks.</p>
+        <p>My simulation work spans HFSS-designed patch antennas achieving S11 of <strong>–32 dB</strong>, through to 4×4 phased arrays with active beam-steering at 3.5 GHz — all targeting real-world 5G deployment scenarios.</p>
+        <p>At <strong>DRDO LRDE</strong>, I work on defence-grade RF and radar systems. I also serve as IEEE Secretary and Chair of four society student branches at SVIT, driving technical growth across our campus.</p>
         <div class="about-links">
           <a href="https://www.linkedin.com/in/vinay-p-bhavi-244909337/" target="_blank" class="a-link">↗ LinkedIn</a>
           <a href="https://github.com/vin070104"                          target="_blank" class="a-link">↗ GitHub</a>
@@ -717,7 +759,7 @@
       <div class="proj-card">
         <p class="proj-num">PROJECT / 01</p>
         <h3 class="proj-title">High-Performance Sub-6 GHz Patch Antenna with Crescent DGS for 5G</h3>
-        <p class="proj-desc">HFSS-designed microstrip patch antenna at 3.5 GHz for 5G NR Band n78. A crescent-shaped defected ground structure dramatically boosted return loss and gain beyond a plain patch baseline.</p>
+        <p class="proj-desc">HFSS-designed microstrip patch antenna at 3.5 GHz for 5G NR Band n78. A crescent-shaped defected ground structure dramatically boosted return loss and gain beyond a plain patch.</p>
         <div class="proj-chips">
           <span class="chip">S11: –32 dB</span><span class="chip">Gain: 4.06 dB</span>
           <span class="chip">3.5 GHz</span><span class="chip">HFSS</span>
@@ -728,7 +770,7 @@
       <div class="proj-card">
         <p class="proj-num">PROJECT / 02</p>
         <h3 class="proj-title">4×4 Phased Array with Beam Steering for Sub-6 GHz 5G</h3>
-        <p class="proj-desc">Designed and simulated a 16-element phased array on FR4 substrate with full beam-steering capability. Demonstrates high gain and efficient radiation for 5G base station deployment at 3.5 GHz.</p>
+        <p class="proj-desc">Designed and simulated a 16-element phased array on FR4 substrate with full beam-steering capability. Demonstrates high gain and efficient radiation for 5G base station deployment.</p>
         <div class="proj-chips">
           <span class="chip">S11: –22.5 dB</span><span class="chip">Gain: 6.87 dB</span>
           <span class="chip">4×4 Array</span><span class="chip">Beam Steering</span>
@@ -739,7 +781,7 @@
       <div class="proj-card">
         <p class="proj-num">PROJECT / 03</p>
         <h3 class="proj-title">RaNaT: IoT-Based Dual-Axis Solar Tracking System</h3>
-        <p class="proj-desc">Engineered a real-time IoT solar tracking system focused on sustainability and cost-effectiveness. Embedded sensors and a monitoring dashboard achieved a 15% improvement in energy storage efficiency.</p>
+        <p class="proj-desc">Engineered a real-time IoT solar tracking system focused on sustainability and cost-effectiveness. Embedded sensors and a monitoring dashboard achieved a 15% improvement in energy harvesting.</p>
         <div class="proj-chips">
           <span class="chip">+15% Efficiency</span><span class="chip">Real-time IoT</span>
           <span class="chip">Arduino</span><span class="chip">Embedded C</span>
@@ -893,10 +935,66 @@
   </section>
 
   <!-- ══════════════════════════════════════════
+       CERTIFICATIONS
+  ══════════════════════════════════════════ -->
+  <section id="certifications">
+    <p class="s-label">// 08 — CERTIFICATIONS</p>
+    <h2 class="s-title">Professional<br><span>Credentials</span></h2>
+    <div class="cert-list">
+
+      <div class="cert-item">
+        <div class="cert-name">
+          <span class="cert-icon">📜</span>
+          <span>MATLAB Onramp</span>
+          <span class="cert-badge">VERIFIED</span>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name">
+          <span class="cert-icon">📜</span>
+          <span>Microstrip Patch Antenna Array in ANSYS HFSS</span>
+          <span class="cert-badge">VERIFIED</span>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name">
+          <span class="cert-icon">📜</span>
+          <span>MATLAB Wireless Communications Onramp</span>
+          <span class="cert-badge">VERIFIED</span>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name">
+          <span class="cert-icon">📜</span>
+          <span>RF Basic Concepts &amp; Components — Radio Frequency</span>
+          <span class="cert-badge">VERIFIED</span>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name">
+          <span class="cert-icon">📜</span>
+          <span>Simulation of Dipole Array in HFSS</span>
+          <span class="cert-badge">VERIFIED</span>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
        CONTACT
   ══════════════════════════════════════════ -->
   <section id="contact">
-    <p class="s-label">// 08 — CONTACT</p>
+    <p class="s-label">// 09 — CONTACT</p>
     <h2 class="s-title">Get in<br><span>Touch</span></h2>
     <div class="contact-grid">
       <div data-reveal>
@@ -1000,196 +1098,60 @@
   // ══════════════════════════════════════════
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-  });
-
-  // ══════════════════════════════════════════
-  //  THREE.JS — 3D ANTENNA SCENE
-  // ══════════════════════════════════════════
-  const scene    = new THREE.Scene();
-  const camera   = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 1000);
-  camera.position.set(0, 0, 6);
-
-  const renderer = new THREE.WebGLRenderer({
-    canvas: document.getElementById('bg'),
-    antialias: true,
-    alpha: true
-  });
-  renderer.setSize(innerWidth, innerHeight);
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  renderer.setClearColor(0x000000, 0);
-
-  // Large outer torus — radiation lobe
-  const torus1 = new THREE.Mesh(
-    new THREE.TorusGeometry(2.6, 0.55, 14, 90),
-    new THREE.MeshBasicMaterial({ color: 0x00d4ff, wireframe: true, transparent: true, opacity: 0.13 })
-  );
-  torus1.rotation.x = Math.PI / 3;
-  scene.add(torus1);
-
-  // Second torus — orthogonal
-  const torus2 = new THREE.Mesh(
-    new THREE.TorusGeometry(1.8, 0.28, 10, 70),
-    new THREE.MeshBasicMaterial({ color: 0x0055bb, wireframe: true, transparent: true, opacity: 0.11 })
-  );
-  torus2.rotation.y = Math.PI / 4;
-  scene.add(torus2);
-
-  // Small inner torus — 3rd plane
-  const torus3 = new THREE.Mesh(
-    new THREE.TorusGeometry(1.2, 0.15, 8, 60),
-    new THREE.MeshBasicMaterial({ color: 0x00d4ff, wireframe: true, transparent: true, opacity: 0.18 })
-  );
-  torus3.rotation.z = Math.PI / 5;
-  scene.add(torus3);
-
-  // Central sphere — antenna element
-  const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(0.32, 24, 24),
-    new THREE.MeshBasicMaterial({ color: 0x00d4ff, wireframe: true, transparent: true, opacity: 0.65 })
-  );
-  scene.add(sphere);
-
-  // Pulsing signal rings
-  const rings = [];
-  for (let i = 0; i < 5; i++) {
-    const m = new THREE.Mesh(
-      new THREE.TorusGeometry(0.45 + i * 0.65, 0.013, 4, 72),
-      new THREE.MeshBasicMaterial({
-        color: i % 2 === 0 ? 0x00d4ff : 0x003a88,
-        transparent: true,
-        opacity: 0.45 - i * 0.06
-      })
-    );
-    m.rotation.x = Math.PI / 2;
-    rings.push({ mesh: m, base: 0.45 - i * 0.06 });
-    scene.add(m);
-  }
-
-  // Particles — spread in a sphere
-  const pCount = 3500;
-  const pPos   = new Float32Array(pCount * 3);
-  for (let i = 0; i < pCount; i++) {
-    const r     = 9 + Math.random() * 13;
-    const theta = Math.random() * Math.PI * 2;
-    const phi   = Math.acos(2 * Math.random() - 1);
-    pPos[i*3]   = r * Math.sin(phi) * Math.cos(theta);
-    pPos[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
-    pPos[i*3+2] = r * Math.cos(phi);
-  }
-  const pGeo = new THREE.BufferGeometry();
-  pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-  const particles = new THREE.Points(pGeo,
-    new THREE.PointsMaterial({ color: 0x00d4ff, size: 0.032, transparent: true, opacity: 0.45 })
-  );
-  scene.add(particles);
-
-  // Ground grid
-  const grid = new THREE.GridHelper(22, 22, 0x001828, 0x001828);
-  grid.position.y = -4.5;
-  grid.material.transparent = true;
-  grid.material.opacity = 0.5;
-  scene.add(grid);
-
-  // Mouse & scroll state
-  let mxS = 0, myS = 0, scrollY = 0;
-  document.addEventListener('mousemove', e => {
-    mxS = (e.clientX / innerWidth  - 0.5) * 2;
-    myS = -(e.clientY / innerHeight - 0.5) * 2;
-  });
-  window.addEventListener('scroll', () => { scrollY = window.scrollY; });
-
-  // Animate
-  let t = 0;
-  (function animate() {
-    requestAnimationFrame(animate);
-    t += 0.007;
-
-    torus1.rotation.z += 0.0015;
-    torus1.rotation.y += 0.0008;
-    torus2.rotation.x += 0.0012;
-    torus2.rotation.z += 0.0018;
-    torus3.rotation.y += 0.002;
-    torus3.rotation.x += 0.001;
-    sphere.rotation.y  = t * 0.9;
-    sphere.rotation.x  = t * 0.4;
-    particles.rotation.y += 0.0003;
-    particles.rotation.x += 0.00008;
-
-    rings.forEach((r, i) => {
-      const p = Math.sin(t * 1.6 + i * 0.9);
-      r.mesh.scale.setScalar(1 + p * 0.06);
-      r.mesh.material.opacity = Math.max(0.02, r.base + p * 0.1);
-    });
-
-    // Subtle mouse parallax on camera
-    camera.position.x += (mxS * 0.25 - camera.position.x) * 0.018;
-    camera.position.y += (myS * 0.20 - camera.position.y) * 0.018;
-
-    // Scroll pushes camera back gently
-    const targetZ = 6 + scrollY * 0.002;
-    camera.position.z += (targetZ - camera.position.z) * 0.05;
-
-    camera.lookAt(0, 0, 0);
-    renderer.render(scene, camera);
-  })();
-
-  window.addEventListener('resize', () => {
-    camera.aspect = innerWidth / innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(innerWidth, innerHeight);
-  });
-
-  // ══════════════════════════════════════════
-  //  INTERSECTION OBSERVER — REVEAL
-  // ══════════════════════════════════════════
-
-  // Generic reveal for [data-reveal]
-  const revObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
-  document.querySelectorAll('[data-reveal]').forEach(el => revObs.observe(el));
-
-  // Skills trigger
-  const skillSec = document.getElementById('skills');
-  const skillObs = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      document.querySelectorAll('.sk-item').forEach((el, i) => {
-        setTimeout(() => {
-          el.classList.add('visible');
-          el.querySelector('.sk-fill').style.width = el.querySelector('.sk-fill').dataset.w + '%';
-        }, i * 110);
-      });
-      skillObs.unobserve(skillSec);
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-  }, { threshold: 0.2 });
-  skillObs.observe(skillSec);
+  });
 
-  // Section-level stagger for cards
-  function staggerSection(sectionId, selectors, delay) {
-    const sec = document.getElementById(sectionId);
-    if (!sec) return;
-    const obs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        sec.querySelectorAll(selectors).forEach((el, i) => {
-          setTimeout(() => el.classList.add('visible'), i * delay);
-        });
-        obs.unobserve(sec);
+  // ══════════════════════════════════════════
+  //  INTERSECTION OBSERVER (Reveal on Scroll)
+  // ══════════════════════════════════════════
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
-    }, { threshold: 0.1 });
-    obs.observe(sec);
-  }
+    });
+  }, { threshold: 0.15 });
 
-  staggerSection('projects',      '.proj-card',  130);
-  staggerSection('publications',  '.pub-card',   140);
-  staggerSection('achievements',  '.ach-card',   100);
-  staggerSection('internships',   '.int-card',   150);
-  staggerSection('education',     '.edu-item',   160);
+  document.querySelectorAll('[data-reveal], .sk-item, .proj-card, .pub-card, .ach-card, .int-card, .edu-item, .cert-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  // ══════════════════════════════════════════
+  //  SKILL BAR ANIMATION
+  // ══════════════════════════════════════════
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fills = entry.target.querySelectorAll('.sk-fill');
+        fills.forEach(fill => {
+          const w = fill.getAttribute('data-w');
+          fill.style.width = w + '%';
+        });
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const skillsGrid = document.getElementById('skillsGrid');
+  if (skillsGrid) skillObserver.observe(skillsGrid);
+
+  // ══════════════════════════════════════════
+  //  SMOOTH SCROLL FIX FOR NAVIGATION
+  // ══════════════════════════════════════════
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && document.querySelector(href)) {
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
   </script>
 </body>
 </html>
