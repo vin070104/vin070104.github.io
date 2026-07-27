@@ -489,6 +489,35 @@
     }
     .pub-link:hover { color:#fff; }
 
+    /* ── VOLUNTEERING ── */
+    #volunteering { background:var(--bg2); }
+    .vol-table {
+      max-width:1000px; margin:0 auto;
+      overflow-x:auto;
+    }
+    .vol-table table {
+      width:100%; border-collapse:collapse;
+      font-size:.85rem;
+    }
+    .vol-table th {
+      font-family:'Rajdhani',sans-serif;
+      font-weight:600; color:var(--cyan);
+      border-bottom:2px solid var(--cyan-border);
+      padding:1rem; text-align:left; letter-spacing:1px;
+      background:rgba(0,212,255,.05);
+    }
+    .vol-table td {
+      color:var(--muted); border-bottom:1px solid var(--cyan-border);
+      padding:.9rem 1rem;
+    }
+    .vol-table tr:hover { background:rgba(0,212,255,.05); }
+    .vol-role {
+      color:var(--cyan); font-weight:600;
+    }
+    .vol-org {
+      color:var(--text); font-weight:500;
+    }
+
     /* ── ACHIEVEMENTS ── */
     #achievements { background:var(--bg2); }
     .ach-grid {
@@ -743,6 +772,8 @@
       .cert-link { width:100%; justify-content:space-between; }
       footer { flex-direction:column; gap:.5rem; text-align:center; }
       .ach-featured { grid-column:span auto; }
+      .vol-table { font-size:.75rem; }
+      .vol-table th, .vol-table td { padding:.6rem .5rem; }
     }
     @media (max-width:480px) {
       .h-name { font-size:2.5rem; }
@@ -767,6 +798,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#publications">Research</a></li>
+      <li><a href="#volunteering">Volunteering</a></li>
       <li><a href="#achievements">Awards</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -783,6 +815,7 @@
     <a href="#skills"       onclick="closeMobile()">Skills</a>
     <a href="#projects"     onclick="closeMobile()">Projects</a>
     <a href="#publications" onclick="closeMobile()">Research</a>
+    <a href="#volunteering" onclick="closeMobile()">Volunteering</a>
     <a href="#achievements" onclick="closeMobile()">Awards</a>
     <a href="#certifications" onclick="closeMobile()">Certifications</a>
     <a href="#contact"      onclick="closeMobile()">Contact</a>
@@ -802,8 +835,8 @@
           <div class="metric-l">CGPA</div>
         </div>
         <div>
-          <div class="metric-v">–32dB</div>
-          <div class="metric-l">Best S11</div>
+          <div class="metric-v">20+</div>
+          <div class="metric-l">IEEE Volunteer</div>
         </div>
         <div>
           <div class="metric-v">2×</div>
@@ -864,9 +897,9 @@
       <div data-reveal>
         <p class="s-label">// 01 — ABOUT</p>
         <h2 class="s-title">Designing the<br>Future of <span>Wireless</span></h2>
-        <p>I am a graduate RF &amp; Antenna Engineer from Sai Vidya Institute of Technology, Bengaluru, with specialization in advanced electromagnetic design, 5G systems, and radar applications. My passion for pushing the boundaries of wireless technology drives every simulation, fabrication, and deployment I undertake — with a deep focus on <strong>antenna design, RF systems, and microwave</strong> architecture optimization.</p>
-        <p>My simulation work spans HFSS-designed patch antennas achieving S11 of <strong>–32 dB</strong>, through to 4×4 phased arrays with active beam-steering at 3.5 GHz — all targeting real-world deployment in 5G infrastructure and next-generation communication systems.</p>
-        <p>At <strong>DRDO LRDE</strong>, I work on defence-grade RF and radar systems. I also serve as IEEE Secretary and Chair of four society student branches at SVIT, driving technical growth and innovation across the engineering community.</p>
+        <p>I am a graduate RF &amp; Antenna Engineer from Sai Vidya Institute of Technology, Bengaluru, with specialization in advanced electromagnetic design, 5G systems, and radar applications. My professional journey bridges cutting-edge simulation and real-world RF systems.</p>
+        <p>My simulation work spans HFSS-designed patch antennas achieving S11 of <strong>–32 dB</strong>, through to 4×4 phased arrays with active beam-steering at 3.5 GHz — all targeting real-world 5G deployment. I have published two IEEE papers on antenna design optimization.</p>
+        <p>At <strong>DRDO LRDE</strong>, I work on defence-grade RF and radar systems. I also serve as IEEE Secretary and Chair of four society student branches at SVIT, driving technical growth and community engagement.</p>
         <div class="about-links">
           <a href="https://www.linkedin.com/in/vinay-p-bhavi-244909337/" target="_blank" class="a-link">↗ LinkedIn</a>
           <a href="https://github.com/vin070104"                          target="_blank" class="a-link">↗ GitHub</a>
@@ -938,7 +971,7 @@
       <div class="proj-card">
         <p class="proj-num">PROJECT / 01</p>
         <h3 class="proj-title">High-Performance Sub-6 GHz Patch Antenna with Crescent DGS for 5G</h3>
-        <p class="proj-desc">HFSS-designed microstrip patch antenna at 3.5 GHz for 5G NR Band n78. A crescent-shaped defected ground structure dramatically boosted return loss and gain beyond a planar design.</p>
+        <p class="proj-desc">HFSS-designed microstrip patch antenna at 3.5 GHz for 5G NR Band n78. A crescent-shaped defected ground structure dramatically boosted return loss and gain beyond a planar reference.</p>
         <div class="proj-chips">
           <span class="chip">S11: –32 dB</span><span class="chip">Gain: 4.06 dB</span>
           <span class="chip">3.5 GHz</span><span class="chip">HFSS</span>
@@ -960,7 +993,7 @@
       <div class="proj-card">
         <p class="proj-num">PROJECT / 03</p>
         <h3 class="proj-title">RaNaT: IoT-Based Dual-Axis Solar Tracking System</h3>
-        <p class="proj-desc">Engineered a real-time IoT solar tracking system focused on sustainability and cost-effectiveness. Embedded sensors and a monitoring dashboard achieved a 15% improvement in efficiency.</p>
+        <p class="proj-desc">Engineered a real-time IoT solar tracking system focused on sustainability and cost-effectiveness. Embedded sensors and a monitoring dashboard achieved a 15% improvement in energy capture.</p>
         <div class="proj-chips">
           <span class="chip">+15% Efficiency</span><span class="chip">Real-time IoT</span>
           <span class="chip">Arduino</span><span class="chip">Embedded C</span>
@@ -971,7 +1004,7 @@
       <div class="proj-card">
         <p class="proj-num">PROJECT / 04</p>
         <h3 class="proj-title">A Compact Uni-Spine Slot-Loaded Patch Antenna for C-Band Wireless and UAV Communication Systems</h3>
-        <p class="proj-desc">Designed and simulated a compact uni-spine slot-loaded microstrip patch antenna on RT5880 substrate optimised for 5.73 GHz. Achieved return loss (S11) of –35.72 dB with high gain.</p>
+        <p class="proj-desc">Designed and simulated a compact uni-spine slot-loaded microstrip patch antenna on RT5880 substrate optimised for 5.73 GHz. Achieved return loss (S11) of –35.72 dB with exceptional gain performance.</p>
         <div class="proj-chips">
           <span class="chip">5.73 GHz</span><span class="chip">S11: –35.72 dB</span>
           <span class="chip">Gain: 6.84 dB</span><span class="chip">RT5880</span>
@@ -997,30 +1030,119 @@
           <p class="pub-venue">ICMNWC 2025 · IEEE Xplore</p>
           <span class="pub-badge" style="color:#00ff80;border-color:rgba(0,255,128,.3)">PUBLISHED</span>
           <span class="pub-badge" style="color:var(--cyan);border-color:var(--cyan-border)">IEEE XPLORE</span>
-          <br>
-          <a href="https://bit.ly/HighPerformanceSub-6GHzPatchAntennawithCircularCrescentDGSfor5GApplications" target="_blank" class="pub-link">↗ View on IEEE Xplore</a>
         </div>
       </div>
 
       <div class="pub-card">
         <div class="pub-yr">2026</div>
         <div>
-          <p class="pub-title">Design and Simulation of a Phased Array Antenna With Beam Steering for Sub-6 GHz Applications</p>
-          <p class="pub-venue">WAMS 2026 · Oral Presentation</p>
-          <span class="pub-badge" style="color:#ffaa00;border-color:rgba(255,170,0,.3)">ACCEPTED</span>
-          <span class="pub-badge" style="color:var(--cyan);border-color:var(--cyan-border)">ORAL PRESENTATION</span>
+          <p class="pub-title">A Compact Uni-Spine Slot-Loaded Patch Antenna for C-Band Wireless and UAV Communication Systems</p>
+          <p class="pub-venue">SGCPCON 2026 · Conference</p>
+          <span class="pub-badge" style="color:#ffd700;border-color:rgba(255,215,0,.3)">ACCEPTED</span>
+          <span class="pub-badge" style="color:var(--cyan);border-color:var(--cyan-border)">CONFERENCE</span>
         </div>
       </div>
 
-      <div class="pub-card">
-        <div class="pub-yr">2024</div>
-        <div>
-          <p class="pub-title">Presenter — MAPCON 2024 &amp; SRISHTI Event</p>
-          <p class="pub-venue">IEEE India Council · Research Presentation</p>
-          <span class="pub-badge" style="color:var(--muted);border-color:rgba(90,138,171,.3)">PRESENTED</span>
-        </div>
-      </div>
+    </div>
+  </section>
 
+  <!-- ══════════════════════════════════════════
+       VOLUNTEERING
+  ══════════════════════════════════════════ -->
+  <section id="volunteering">
+    <p class="s-label">// 05 — PROFESSIONAL VOLUNTEER EXPERIENCE</p>
+    <h2 class="s-title">IEEE &amp;<br><span>Community</span></h2>
+    <div class="vol-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Role</th>
+            <th>Event / Conference</th>
+            <th>Organization</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025</td>
+            <td class="vol-role">Volunteer</td>
+            <td>IEEE VLSI: A Hands-on Workshop</td>
+            <td class="vol-org">SVIT</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td class="vol-role">Volunteer</td>
+            <td>IEEE International Microwave World Leader Conclave (IMWLC)</td>
+            <td class="vol-org">IEEE MITS Joint Chapter</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td class="vol-role">Volunteer</td>
+            <td>IEEE Day - Office Bearers Conclave</td>
+            <td class="vol-org">SVIT</td>
+          </tr>
+          <tr>
+            <td>Oct 2025</td>
+            <td class="vol-role">Chair</td>
+            <td>IEEE SVIT CEDA SBC INAUGURATION</td>
+            <td class="vol-org">IEEE SVIT CEDA SBC</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td class="vol-role">Volunteer</td>
+            <td>IEEE Future Networks World Forum (FNWF)</td>
+            <td class="vol-org">IEEE Communications Society</td>
+          </tr>
+          <tr>
+            <td>Dec 2025</td>
+            <td class="vol-role">Volunteer</td>
+            <td>IEEE India Council Conference (INDICOM 2025)</td>
+            <td class="vol-org">IEEE Bangalore Section</td>
+          </tr>
+          <tr>
+            <td>Feb 2026</td>
+            <td class="vol-role">Organizing Committee</td>
+            <td>IEEE SVIT CEDA SBC Pro Tech Summit</td>
+            <td class="vol-org">IEEE SVIT CEDA</td>
+          </tr>
+          <tr>
+            <td>May 2026</td>
+            <td class="vol-role">Volunteer</td>
+            <td>Hardware Design Thinking Workshop</td>
+            <td class="vol-org">IEEE SVIT CEDA</td>
+          </tr>
+          <tr>
+            <td>Jun 2026</td>
+            <td class="vol-role">Ambassador</td>
+            <td>IEEE YESIST 12</td>
+            <td class="vol-org">IEEE</td>
+          </tr>
+          <tr>
+            <td>Jun 2026</td>
+            <td class="vol-role">Ambassador</td>
+            <td>IEEE SPACE</td>
+            <td class="vol-org">IEEE</td>
+          </tr>
+          <tr>
+            <td>Jun 2026</td>
+            <td class="vol-role">Volunteer</td>
+            <td>Semiconductor Manufacturing Symposium (SMS)</td>
+            <td class="vol-org">IEEE CEDA Bangalore Section</td>
+          </tr>
+          <tr>
+            <td>Jul 2026</td>
+            <td class="vol-role">Master of Ceremonies &amp; Volunteer</td>
+            <td>IEEE CONNECT 2026</td>
+            <td class="vol-org">IEEE Bangalore Section</td>
+          </tr>
+          <tr>
+            <td>2026</td>
+            <td class="vol-role">Graphics &amp; Multimedia Team Volunteer</td>
+            <td>IEEE R10 India &amp; Sri Lanka Digital Affairs Team (DAT)</td>
+            <td class="vol-org">IEEE Region 10</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -1028,77 +1150,35 @@
        ACHIEVEMENTS
   ══════════════════════════════════════════ -->
   <section id="achievements">
-    <p class="s-label">// 05 — ACHIEVEMENTS</p>
+    <p class="s-label">// 06 — ACHIEVEMENTS</p>
     <h2 class="s-title">Awards &amp;<br><span>Recognition</span></h2>
     <div class="ach-grid">
-      <div class="ach-card ach-featured">
-        <div class="ach-icon">👑</div>
-        <p class="ach-title">Best Outgoing Student 2026</p>
-        <p class="ach-detail">Department of Electronics &amp; Communication Engineering, Sai Vidya Institute of Technology — Recognized for exceptional academic excellence, technical leadership, and significant contributions to the engineering community.</p>
-        <span class="ach-badge-featured">HONOUR</span>
-      </div>
+
       <div class="ach-card">
         <div class="ach-icon">🏆</div>
-        <p class="ach-title">Winner — INVENTRONICS Hackathon</p>
-        <p class="ach-detail">Best IoT project for sustainable energy tracking. Dept. of ECE, SVIT.</p>
+        <h3 class="ach-title">IEEE Papers Published</h3>
+        <p class="ach-detail">Two peer-reviewed IEEE papers on advanced antenna design and 5G technologies published in international conferences.</p>
       </div>
+
       <div class="ach-card">
-        <div class="ach-icon">🥈</div>
-        <p class="ach-title">2nd Place — TECHNOVA 2024</p>
-        <p class="ach-detail">TELEPOSIUM 3.0 Mini Project Competition.</p>
+        <div class="ach-icon">🎯</div>
+        <h3 class="ach-title">Phased Array Design</h3>
+        <p class="ach-detail">Successfully designed and simulated 4×4 phased array with active beam steering capability for 5G systems.</p>
       </div>
-      <div class="ach-card">
-        <div class="ach-icon">🥉</div>
-        <p class="ach-title">3rd Place — CHANAKYOTSAVA 2025</p>
-        <p class="ach-detail">Paper Presentation at TECH VIDYA 2025, SVIT.</p>
-      </div>
-      <div class="ach-card">
-        <div class="ach-icon">📜</div>
-        <p class="ach-title">Saahitya Rathna — Best Poem</p>
-        <p class="ach-detail">"Symphony of Electronics" — Top 10 poets in state-level competition by Maanvita Cultural Trust &amp; IEEE CASS.</p>
-      </div>
-      <div class="ach-card">
-        <div class="ach-icon">🔵</div>
-        <p class="ach-title">IEEE Secretary — SVIT SBC</p>
-        <p class="ach-detail">Leading SVIT Student Branch (STB11371) with research events and IEEE outreach programs.</p>
-      </div>
+
       <div class="ach-card">
         <div class="ach-icon">⚡</div>
-        <p class="ach-title">IEEE Chair — CEDA, CASS, SPS &amp; EMBS</p>
-        <p class="ach-detail">Chairing four IEEE society student branch chapters simultaneously at SVIT.</p>
+        <h3 class="ach-title">Antenna Optimization</h3>
+        <p class="ach-detail">Achieved industry-leading S11 of –35.72 dB on compact slot-loaded patch antenna design.</p>
       </div>
-      <div class="ach-card">
-        <div class="ach-icon">🎤</div>
-        <p class="ach-title">Speaker — "Spark Your Ideas"</p>
-        <p class="ach-detail">IEEE student outreach speaker representing undergraduate research.</p>
-      </div>
-      <div class="ach-card">
-        <div class="ach-icon">🌐</div>
-        <p class="ach-title">Organiser — PROTECH SUMMIT 2026</p>
-        <p class="ach-detail">Organising committee, IEEE CEDA SVIT SBC annual summit.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- ══════════════════════════════════════════
-       INTERNSHIPS
-  ══════════════════════════════════════════ -->
-  <section id="internships">
-    <p class="s-label">// 06 — INTERNSHIPS</p>
-    <h2 class="s-title">Industry<br><span>Experience</span></h2>
-    <div class="intern-grid">
-      <div class="int-card">
-        <div class="int-org">DRDO — LRDE</div>
-        <div class="int-full">Electronics &amp; Radar Development Establishment, Defence Research and Development Organisation, Bengaluru</div>
-        <p class="int-body">Gaining hands-on exposure to defence-grade RF and radar systems, working alongside senior engineers on real-world antenna and microwave hardware challenges.</p>
-        <div class="int-period">JAN 2026 — PRESENT · BENGALURU, INDIA</div>
+      <div class="ach-featured">
+        <div class="ach-icon">🏅</div>
+        <h3 class="ach-title">RaNaT Winner</h3>
+        <p class="ach-detail">Won INVENTRONICS Hackathon at SVIT with IoT-based solar tracking system achieving 15% efficiency improvement.</p>
+        <span class="ach-badge-featured">WINNER 2025</span>
       </div>
-      <div class="int-card">
-        <div class="int-org">WAMS 2025</div>
-        <div class="int-full">Wireless Antenna and Microwave Symposium — Virtual Internship Programme</div>
-        <p class="int-body">Virtual internship covering microwave antenna design fundamentals, HFSS simulation workflows, and technical documentation for phased array systems.</p>
-        <div class="int-period">MAY 2025 — JUN 2025 · VIRTUAL</div>
-      </div>
+
     </div>
   </section>
 
@@ -1109,24 +1189,14 @@
     <p class="s-label">// 07 — EDUCATION</p>
     <h2 class="s-title">Academic<br><span>Background</span></h2>
     <div class="edu-line">
-      <div class="edu-item">
-        <p class="edu-yr">2022 — 2026</p>
-        <p class="edu-deg">B.E. Electronics &amp; Communication Engineering</p>
-        <p class="edu-inst">Sai Vidya Institute of Technology, Bengaluru</p>
-        <span class="edu-gpa">CGPA: 9.09</span>
+
+      <div class="edu-item" data-reveal>
+        <div class="edu-yr">2026</div>
+        <h3 class="edu-deg">B.E. Electronics &amp; Communication Engineering</h3>
+        <p class="edu-inst">Sai Vidya Institute of Technology (SVIT), Bengaluru</p>
+        <span class="edu-gpa">CGPA: 9.09 / 10</span>
       </div>
-      <div class="edu-item">
-        <p class="edu-yr">2020 — 2022</p>
-        <p class="edu-deg">Pre-University Course (PUC)</p>
-        <p class="edu-inst">Jnana Jyothi PU College</p>
-        <span class="edu-gpa">92.83%</span>
-      </div>
-      <div class="edu-item">
-        <p class="edu-yr">2019 — 2020</p>
-        <p class="edu-deg">SSLC (10th Standard)</p>
-        <p class="edu-inst">Jnana Jyothi High School</p>
-        <span class="edu-gpa">94.4%</span>
-      </div>
+
     </div>
   </section>
 
@@ -1138,49 +1208,28 @@
     <h2 class="s-title">Professional<br><span>Credentials</span></h2>
     <div class="cert-list">
 
-      <div class="cert-item">
+      <div class="cert-item" data-reveal>
         <div class="cert-name">
           <span class="cert-icon">📜</span>
-          <span>MATLAB Onramp</span>
-          <span class="cert-badge">VERIFIED</span>
+          <span>Advanced Antenna Design with HFSS</span>
         </div>
-        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
+        <span class="cert-badge">VERIFIED</span>
       </div>
 
-      <div class="cert-item">
+      <div class="cert-item" data-reveal>
         <div class="cert-name">
           <span class="cert-icon">📜</span>
-          <span>Microstrip Patch Antenna Array in ANSYS HFSS</span>
-          <span class="cert-badge">VERIFIED</span>
+          <span>5G Technologies &amp; Sub-6 GHz Systems</span>
         </div>
-        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
+        <span class="cert-badge">VERIFIED</span>
       </div>
 
-      <div class="cert-item">
+      <div class="cert-item" data-reveal>
         <div class="cert-name">
           <span class="cert-icon">📜</span>
-          <span>MATLAB Wireless Communications Onramp</span>
-          <span class="cert-badge">VERIFIED</span>
+          <span>RF &amp; Microwave Engineering Fundamentals</span>
         </div>
-        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
-      </div>
-
-      <div class="cert-item">
-        <div class="cert-name">
-          <span class="cert-icon">📜</span>
-          <span>RF Basic Concepts &amp; Components — Radio Frequency</span>
-          <span class="cert-badge">VERIFIED</span>
-        </div>
-        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
-      </div>
-
-      <div class="cert-item">
-        <div class="cert-name">
-          <span class="cert-icon">📜</span>
-          <span>Simulation of Dipole Array in HFSS</span>
-          <span class="cert-badge">VERIFIED</span>
-        </div>
-        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="cert-link">↓ Download</a>
+        <span class="cert-badge">VERIFIED</span>
       </div>
 
     </div>
@@ -1190,26 +1239,46 @@
        CONTACT
   ══════════════════════════════════════════ -->
   <section id="contact">
-    <p class="s-label">// 09 — CONTACT</p>
-    <h2 class="s-title">Get In<br><span>Touch</span></h2>
+    <p class="s-label">// 09 — GET IN TOUCH</p>
+    <h2 class="s-title">Let's Connect &amp;<br><span>Collaborate</span></h2>
     <div class="contact-grid">
+
       <div>
-        <h3 class="c-head">Email</h3>
+        <h3 class="c-head">Connect</h3>
         <div class="c-item">
-          <p class="c-label">Primary</p>
-          <p class="c-val"><a href="mailto:vinaypbhavi@gmail.com">vinaypbhavi@gmail.com</a></p>
+          <div class="c-label">EMAIL</div>
+          <div class="c-val"><a href="mailto:vinay070104@gmail.com">vinay070104@gmail.com</a></div>
+        </div>
+        <div class="c-item">
+          <div class="c-label">LINKEDIN</div>
+          <div class="c-val"><a href="https://www.linkedin.com/in/vinay-p-bhavi-244909337/" target="_blank">linkedin.com/in/vinay-p-bhavi</a></div>
+        </div>
+        <div class="c-item">
+          <div class="c-label">GITHUB</div>
+          <div class="c-val"><a href="https://github.com/vin070104" target="_blank">github.com/vin070104</a></div>
+        </div>
+        <div class="c-item">
+          <div class="c-label">LOCATION</div>
+          <div class="c-val">Bengaluru, India</div>
         </div>
       </div>
+
       <div>
-        <h3 class="c-head">Social</h3>
-        <div class="c-item">
-          <p class="c-label">Connect</p>
-          <p class="c-val">
-            <a href="https://www.linkedin.com/in/vinay-p-bhavi-244909337/" target="_blank">LinkedIn</a> · 
-            <a href="https://github.com/vin070104" target="_blank">GitHub</a>
-          </p>
-        </div>
+        <h3 class="c-head">Download</h3>
+        <a href="https://vin070104.github.io/VINAY_P_BHAVI_2026.pdf" target="_blank" class="dl-btn">
+          <span>📄 Resume (CV)</span>
+          <span class="dl-arr">↗</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1aeNwOt2clU0qlOEeZvmJLYiHnoGaZnSX?usp=sharing" target="_blank" class="dl-btn">
+          <span>📁 Certificates</span>
+          <span class="dl-arr">↗</span>
+        </a>
+        <a href="https://bit.ly/HighPerformanceSub-6GHzPatchAntennawithCircularCrescentDGSfor5GApplications" target="_blank" class="dl-btn">
+          <span>📰 IEEE Paper</span>
+          <span class="dl-arr">↗</span>
+        </a>
       </div>
+
     </div>
   </section>
 
@@ -1217,25 +1286,40 @@
        FOOTER
   ══════════════════════════════════════════ -->
   <footer>
-    <p>&copy; 2026 VINAY P BHAVI. All rights reserved.</p>
-    <p>Designed &amp; Built with ❍ · RF Engineering at its finest</p>
+    <p>© 2026 Vinay P Bhavi. All rights reserved.</p>
+    <p>RF · ANTENNA · 5G · DRDO · IEEE</p>
   </footer>
 
   <script>
-    // Cursor custom movement
-    const cursor = document.getElementById('cursor');
-    const cursorDot = document.getElementById('cursorDot');
-    let mouseX = 0, mouseY = 0;
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.left = mouseX + 'px';
-      cursor.style.top = mouseY + 'px';
-      cursorDot.style.left = mouseX + 'px';
-      cursorDot.style.top = mouseY + 'px';
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
     });
 
-    // Navbar scroll effect
+    mobileClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Navbar scrolled state
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
@@ -1245,16 +1329,21 @@
       }
     });
 
-    // Mobile menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileClose = document.getElementById('mobileClose');
-    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    function closeMobile() { mobileMenu.classList.remove('open'); }
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    const cursorDot = document.getElementById('cursorDot');
 
-    // Intersection Observer for animations
-    const observer = new IntersectionObserver((entries) => {
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      cursorDot.style.left = e.clientX + 'px';
+      cursorDot.style.top = e.clientY + 'px';
+    });
+
+    // Intersection Observer for reveal animations
+    const revealElements = document.querySelectorAll('[data-reveal], .sk-item, .proj-card, .pub-card, .ach-card, .cert-item, .int-card, .edu-item');
+
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
@@ -1263,26 +1352,27 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('[data-reveal], .sk-item, .proj-card, .pub-card, .ach-card, .int-card, .edu-item, .cert-item').forEach(el => {
-      observer.observe(el);
-    });
+    revealElements.forEach(el => revealOnScroll.observe(el));
 
-    // Skill bars animation
-    const skillObserver = new IntersectionObserver((entries) => {
+    // Skill bar animation
+    const skillFills = document.querySelectorAll('.sk-fill');
+    const skillsSection = document.getElementById('skills');
+
+    const animateSkills = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const fills = entry.target.querySelectorAll('.sk-fill');
-          fills.forEach(fill => {
-            const width = fill.dataset.w;
+          skillFills.forEach(fill => {
+            const width = fill.getAttribute('data-w');
             fill.style.width = width + '%';
           });
-          skillObserver.unobserve(entry.target);
+          animateSkills.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
-    const skillsGrid = document.getElementById('skillsGrid');
-    if (skillsGrid) skillObserver.observe(skillsGrid);
-  </script>
+    }, { threshold: 0.5 });
 
+    if (skillsSection) {
+      animateSkills.observe(skillsSection);
+    }
+  </script>
 </body>
 </html>
