@@ -463,6 +463,18 @@
     }
     .pub-card.visible { opacity:1; transform:translateX(0); }
     .pub-card:hover { border-color:var(--cyan); box-shadow:var(--glow); }
+    .pub-card-featured {
+      border-color:rgba(255,215,0,.55);
+      border-left:4px solid var(--gold);
+      background:linear-gradient(110deg,rgba(255,215,0,.09),rgba(3,14,30,.92) 58%);
+      box-shadow:0 0 22px rgba(255,215,0,.08);
+    }
+    .pub-card-featured:hover {
+      border-color:var(--gold);
+      box-shadow:0 0 28px rgba(255,215,0,.18);
+    }
+    .pub-card-featured .pub-title { color:#fff4c2; }
+
     .pub-yr {
       font-family:'Share Tech Mono',monospace; font-size:.68rem;
       color:var(--cyan); writing-mode:vertical-rl; letter-spacing:3px;
@@ -1040,6 +1052,19 @@
           <p class="pub-venue">SGCPCON 2026 · Conference</p>
           <span class="pub-badge" style="color:#ffd700;border-color:rgba(255,215,0,.3)">ACCEPTED</span>
           <span class="pub-badge" style="color:var(--cyan);border-color:var(--cyan-border)">CONFERENCE</span>
+        </div>
+      </div>
+
+      <div class="pub-card pub-card-featured">
+        <div class="pub-yr">2026</div>
+        <div>
+          <p class="pub-title">Low-Observable High-Gain Serrated Leaf 1×5 MIMO Array for Secure Airborne 5G/6G Networks</p>
+          <p class="pub-venue">MAPCON 2026 · Accepted Conference Paper</p>
+          <span class="pub-badge" style="color:#ffd700;border-color:rgba(255,215,0,.45);background:rgba(255,215,0,.08)">★ ACCEPTED AT MAPCON</span>
+          <span class="pub-badge" style="color:var(--cyan);border-color:var(--cyan-border)">KA-BAND · 1×5 MIMO</span>
+          <a class="pub-link" href="MAPCON_2026_Accepted_Paper_Low_Observable_High_Gain_Serrated_Leaf_1x5_MIMO.pdf" target="_blank" rel="noopener">
+            VIEW ACCEPTED PAPER ↗
+          </a>
         </div>
       </div>
 
